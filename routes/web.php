@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Requests\TestFormRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::view('/', 'welcome');
+
+Route::post('/', function (TestFormRequest $request) {
     return view('welcome');
 });
