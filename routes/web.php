@@ -19,3 +19,8 @@ Route::view('/', 'welcome');
 Route::post('/', function (TestFormRequest $request) {
     return view('welcome');
 });
+
+// This route triggers the 502 error
+Route::get('test', function () {
+    return dns_get_record('laravel.com', DNS_A);
+});
